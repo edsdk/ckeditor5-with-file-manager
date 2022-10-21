@@ -2,7 +2,7 @@
   "name": "ckeditor5-with-file-manager",
   "author": "Flmngr",
   "description": "A build of CKEditor 5 with Flmngr file manager, ImgPen image editor and many official plugins usually needed.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "GPL-2.0-or-later",
   "private": true,
   "main": "./build/ckeditor.js",

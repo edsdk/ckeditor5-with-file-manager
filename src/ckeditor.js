@@ -105,47 +105,33 @@ Editor.defaultConfig = {
 			'|',
 			'bold',
 			'italic',
-			'strikethrough',
-			'underline',
-			'superscript',
+			'link',
 			'bulletedList',
 			'numberedList',
-			'code',
-			'|',
-			'upload',
-			'flmngr',
-			'imgpen',
-			'|',
-			'link',
-			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
-			'htmlEmbed',
-			'|',
-			'fontColor',
-			'fontBackgroundColor',
-			'fontSize',
-			'fontFamily',
-			'removeFormat',
 			'|',
 			'outdent',
 			'indent',
-			'alignment',
 			'|',
+			'uploadImage',
+			'blockQuote',
+			'insertTable',
+			'mediaEmbed',
 			'undo',
 			'redo',
 			'|',
-			'findAndReplace'
+			'upload',
+			'flmngr',
+			'imgpen'
 		]
 	},
-	language: 'en',
 	image: {
 		toolbar: [
-			'imageTextAlternative',
 			'imageStyle:inline',
 			'imageStyle:block',
 			'imageStyle:side',
-			'linkImage',
+			'|',
+			'toggleImageCaption',
+			'imageTextAlternative',
 			'|',
 			'upload',
 			'flmngr',
@@ -156,11 +142,11 @@ Editor.defaultConfig = {
 		contentToolbar: [
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells',
-			'tableCellProperties',
-			'tableProperties'
+			'mergeTableCells'
 		]
-	}
+	},
+	// This value must be kept in sync with the language defined in webpack.config.js.
+	language: 'en'
 };
 
 export default Editor;
