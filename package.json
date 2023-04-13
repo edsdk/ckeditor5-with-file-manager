@@ -32,7 +32,7 @@
     "@ckeditor/ckeditor5-theme-lark": ">=35.0.1",
     "@ckeditor/ckeditor5-typing": ">=35.0.1",
     "@ckeditor/ckeditor5-word-count": ">=35.0.1",
-    "@edsdk/flmngr-ckeditor5": ">=1.0.3",
+    "@edsdk/flmngr-ckeditor5": ">=1.0.8",
     "css-loader": "^5.2.7",
     "postcss": "^8.4.14",
     "postcss-loader": "^4.3.0",
