@@ -103,21 +103,13 @@
 				Holding sp. z o.o. All rights reserved.
 			</p>
 		</footer>
-		<script src="../build/ckeditor.js"></script>
-		<script>ClassicEditor
+		<script src="../build/ckeditor5-flmngr.js"></script>
+		<script>CKEditor5WithFileManager
 				.create( document.querySelector( '.editor' ), {
-
-				    // Flmngr file manager configuration
-					// By default it is linked to our demo server.
-					// You must change these values to the links to your own server
-					// where you will store files and have server PHP side part of Flmngr installed.
-					// More info:
-					//   https://flmngr.com/doc/install-ckeditor-5-plugin
 				    Flmngr: {
-                        urlFileManager: "https://fm.n1ed.com/fileManager",
-                        urlFiles: "https://fm.n1ed.com/files"
+                        // Get your API key in the Dashboard:  https://flmngr.com/dashboard
+                        // apiKey: "..."
 				    }
-
 				} )
 				.then( editor => {
 					window.editor = editor;
