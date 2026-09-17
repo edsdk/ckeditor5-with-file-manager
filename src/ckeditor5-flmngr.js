@@ -24,12 +24,13 @@ import {
 	TextTransformation
 } from 'ckeditor5';
 import 'ckeditor5/ckeditor5.css';
-import Flmngr from "@edsdk/flmngr-ckeditor5/src/flmngr";
+import Flmngr from "@edsdk/flmngr-ckeditor5";
 
 export default class CKEditor5WithFileManager extends ClassicEditor {
 
 	static create(selector, config) {
 		return ClassicEditor.create( selector, {
+			licenseKey: 'GPL',
 			plugins: [
 				Essentials,
 				Autoformat,
@@ -108,5 +109,9 @@ export default class CKEditor5WithFileManager extends ClassicEditor {
 	}
 
 }
+
+window.ckeditor5BuildName = "n1";
+window.ckeditor5BuildMajorVersion = 2025;
+window.ckeditor5BuildMinorVersion = "10.0";
 
 window.CKEditor5WithFileManager = CKEditor5WithFileManager;

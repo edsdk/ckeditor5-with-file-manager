@@ -3,8 +3,6 @@
 /* eslint-env node */
 
 const path = require( 'path' );
-const webpack = require( 'webpack' );
-const { bundler, styles } = require( '@ckeditor/ckeditor5-dev-utils' );
 const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
 const TerserWebpackPlugin = require( 'terser-webpack-plugin' );
 
@@ -26,9 +24,11 @@ module.exports = {
 			new TerserWebpackPlugin( {
 				sourceMap: true,
 				terserOptions: {
-					output: {
-						// Preserve CKEditor 5 license comments.
-						comments: /^!/
+					format: {
+						// 'some' keeps the @license/@preserve notices the bundled sources carry -
+						// CKEditor 5 puts one in every module. The old /^!/ matched none of them
+						// (they are /**, not /*!), so it stripped what it meant to keep.
+						comments: 'some'
 					}
 				},
 				extractComments: false
@@ -43,10 +43,6 @@ module.exports = {
 			language: 'en',
 			additionalLanguages: 'all'
 		} ),
-		new webpack.BannerPlugin( {
-			banner: bundler.getLicenseBanner(),
-			raw: true
-		} )
 	],
 
 	module: {
@@ -69,18 +65,7 @@ module.exports = {
 					},
 					{
 						loader: 'css-loader'
-					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							postcssOptions: styles.getPostCssConfig( {
-								themeImporter: {
-									themePath: require.resolve( '@ckeditor/ckeditor5-theme-lark' )
-								},
-								minify: true
-							} )
-						}
-					},
+					}
 				]
 			}
 		]
